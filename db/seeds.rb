@@ -1,9 +1,23 @@
 #Ingredients = sample_model(Ingredient, IngredientsHelper)
-
-Ingredients.each do |ingredient|
-  dish.measured_ingredients.create(
-    amount: rand(MEASUREMENT_AMOUNT_RANGE),
-    ingredient: ingredient,
-    measurement: measurements.sample
-  )
-end
+ingredients = Ingredients.create[{
+                           "name": "Teal"
+                         }, {
+                           "name": "Purple"
+                         }, {
+                           "name": "Indigo"
+                         }, {
+                           "name": "Khaki"
+                         }, {
+                           "name": "Green"
+                         }, {
+                           "name": "Indigo"
+                         }, {
+                           "name": "Purple"
+                         }, {
+                           "name": "Crimson"
+                         }, {
+                           "name": "Crimson"
+                         }, {
+                           "name": "Goldenrod"
+                         }]
+ingredients.save
