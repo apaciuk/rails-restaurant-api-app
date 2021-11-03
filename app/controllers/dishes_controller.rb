@@ -1,9 +1,9 @@
 class DishesController < ApplicationController
-  before_action :set_dish, only: %i[ show edit update destroy ]
+  before_action :set_dish, only: %i[show edit update destroy]
 
   # GET /dishes or /dishes.json
   def index
-    @dishes = Dish.all
+    @dishes = Dish.includes(:restaurant, measured_ingredients: %i[:ingredient, measurement]).with_attached_image
   end
 
   # GET /dishes/1 or /dishes/1.json

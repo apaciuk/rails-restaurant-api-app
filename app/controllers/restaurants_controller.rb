@@ -3,12 +3,16 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants or /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.includes(:dishes).all
   end
+  # After action,automagically renders the index.json jbuilder
+  # the jbuilder view will get access to the @restaurants array
 
   # GET /restaurants/1 or /restaurants/1.json
   def show
   end
+  # After action,automagically renders the sshiow.json jbuilder
+  #the jbuilder view will get access to the @restaurant object (set restaurant)
 
   # GET /restaurants/new
   def new
